@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300"
           rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=YOUR_CLIENT_ID&callback=initMap"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <input type="button" onClick="sendLinkCustom();" value="Custom"/>
     <input type="button" onClick="sendLinkDefault();" value="Default"/>
@@ -125,6 +126,12 @@
           }
         });
 */
+        var mapOptions = {
+            center: new naver.maps.LatLng(37.3595704, 127.105399),
+            zoom: 10
+        };
+
+        var map = new naver.maps.Map('map', mapOptions);
     </script>
 </head>
 
@@ -284,7 +291,8 @@
                             </table>
                         </div>
                         <div class="my-3">
-                            <iframe src="http://naver.me/xVlAThZr" width="auto" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <!--<iframe src="http://naver.me/xVlAThZr" width="auto" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+                            <div id="map" style="width:100%;height:400px;"></div>
                         </div>
                     </div>
                 </div>
